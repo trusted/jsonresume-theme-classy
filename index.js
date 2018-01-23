@@ -418,45 +418,51 @@ function render(resumeObject) {
             a.startDateMonth = "December ";
             break;
         }
-        a.endDateYear = (a.endDate || "").substr(0, 4);
-        switch ((a.endDate || "").substr(5, 2)) {
-          case "01":
-            a.endDateMonth = "January ";
-            break;
-          case "02":
-            a.endDateMonth = "February ";
-            break;
-          case "03":
-            a.endDateMonth = "March ";
-            break;
-          case "04":
-            a.endDateMonth = "April ";
-            break;
-          case "05":
-            a.endDateMonth = "May ";
-            break;
-          case "06":
-            a.endDateMonth = "June ";
-            break;
-          case "07":
-            a.endDateMonth = "July ";
-            break;
-          case "08":
-            a.endDateMonth = "August ";
-            break;
-          case "09":
-            a.endDateMonth = "September ";
-            break;
-          case "10":
-            a.endDateMonth = "October ";
-            break;
-          case "11":
-            a.endDateMonth = "November ";
-            break;
-          case "12":
-            a.endDateMonth = "December ";
-            break;
+        if (a.endDate) {
+          a.endDateYear = (a.endDate || "").substr(0, 4);
+          switch ((a.endDate || "").substr(5, 2)) {
+            case "01":
+              a.endDateMonth = "January ";
+              break;
+            case "02":
+              a.endDateMonth = "February ";
+              break;
+            case "03":
+              a.endDateMonth = "March ";
+              break;
+            case "04":
+              a.endDateMonth = "April ";
+              break;
+            case "05":
+              a.endDateMonth = "May ";
+              break;
+            case "06":
+              a.endDateMonth = "June ";
+              break;
+            case "07":
+              a.endDateMonth = "July ";
+              break;
+            case "08":
+              a.endDateMonth = "August ";
+              break;
+            case "09":
+              a.endDateMonth = "September ";
+              break;
+            case "10":
+              a.endDateMonth = "October ";
+              break;
+            case "11":
+              a.endDateMonth = "November ";
+              break;
+            case "12":
+              a.endDateMonth = "December ";
+              break;
+          }
+        } else {
+          a.endDateYear = "Present";
+          a.endDateMonth = "";
         }
+
         if (a.highlights) {
           if (a.highlights[0]) {
             if (a.highlights[0] != "") {
@@ -477,6 +483,18 @@ function render(resumeObject) {
   if (resumeObject.interests) {
     if (resumeObject.interests[0].name) {
       resumeObject.interestsBool = true;
+    }
+  }
+
+  if (resumeObject.licenses) {
+    if (resumeObject.licenses[0].title) {
+      resumeObject.licensesBool = true;
+    }
+  }
+
+  if (!resumeObject.licensesBool && resumeObject.certifications) {
+    if (resumeObject.certifications[0].title) {
+      resumeObject.licensesBool = true;
     }
   }
 
