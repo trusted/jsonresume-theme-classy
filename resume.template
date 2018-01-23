@@ -15,6 +15,12 @@
 			color: #333333;
 		}
 
+		.nobreak {
+			float: none;
+			position: relative;
+			page-break-inside: avoid !important;
+		}
+
 		.picture {
 			border-radius: 50%;
 			margin: 0 auto;
@@ -168,7 +174,7 @@
 </head>
 
 <body>
-	<div class="header">
+	<div class="header nobreak">
 		{{#pictureBool}}
 		<img src="{{basics.picture}}" width="75px" height="75px" class="picture"> {{/pictureBool}}
 		<h1>{{basics.capitalName}}</h1>
@@ -177,7 +183,7 @@
 			{{basics.location.city}}, {{basics.location.region}}, {{basics.location.countryCode}}
 			<br> {{basics.location.address}}
 		</div>
-		<div id="contact">
+		<div id="contact nobreak">
 			<br> {{#emailBool}}
 			<div class="contact-header">
 				EMAIL
@@ -192,7 +198,7 @@
 				</span>
 			</div>
 			{{/emailBool}} {{#phoneBool}}
-			<div class="contact-header">
+			<div class="contact-header nobreak">
 				PHONE
 				<span class="responsive-hidden">&bull;</span>
 				<span class="responsive-show">
@@ -220,7 +226,7 @@
 		</div>
 		{{#profilesBool}}
 		<br>
-		<div id="profiles">
+		<div id="profiles nobreak">
 			<div class="contact-header">PROFILES</div>
 			<br> {{#basics.profiles}}
 			<p class="profile">
@@ -232,7 +238,7 @@
 	</div>
 	<div class="main">
 		{{#aboutBool}}
-		<div id="about">
+		<div id="about nobreak">
 			<h2>
 				<i class="fa fa-user left"></i> ABOUT</h2>
 			<p>
@@ -240,7 +246,7 @@
 			</p>
 		</div>
 		{{/aboutBool}} {{#workBool}}
-		<div id="work">
+		<div id="work nobreak">
 			<h2>
 				<i class="fa fa-suitcase left"></i> WORK EXPERIENCE</h2>
 			{{#work}}
@@ -260,7 +266,7 @@
 			{{/work}}
 		</div>
 		{{/workBool}} {{#volunteerBool}}
-		<div id="volunteer">
+		<div id="volunteer nobreak">
 			<h2>
 				<i class="fa fa-child left"></i> VOLUNTEER WORK</h2>
 			{{#volunteer}}
@@ -280,9 +286,9 @@
 			{{/volunterHighlights}} {{/volunteer}}
 		</div>
 		{{/volunteerBool}} {{#skillsBool}}
-		<div id="skills">
+		<div id="skills nobreak">
 			<h2>
-				<i class="fa fa-tasks left"></i> SKILLS</h2>
+				<i class="fa fa-tasks left"></i> Clinical Experience</h2>
 			{{#skills}}
 			<h3 class="skills">{{name}}</h3>
 			{{#keywords}}
@@ -290,7 +296,7 @@
 			{{/keywords}} {{/skills}}
 		</div>
 		<br> {{/skillsBool}} {{#educationBool}}
-		<div id="education">
+		<div id="education nobreak">
 			<h2>
 				<i class="fa fa-graduation-cap left"></i> EDUCATION</h2>
 			{{#education}}
@@ -307,7 +313,7 @@
 			{{/educationCourses}} {{/education}}
 		</div>
 		{{/educationBool}} {{#awardsBool}}
-		<div id="awards">
+		<div id="awards nobreak">
 			<h2>
 				<i class="fa fa-trophy left"></i> AWARDS</h2>
 			{{#awards}}
@@ -317,7 +323,7 @@
 			{{/awards}}
 		</div>
 		{{/awardsBool}} {{#publicationsBool}}
-		<div id="publications">
+		<div id="publications nobreak">
 			<h2>
 				<i class="fa fa-book left"></i> PUBLICATIONS</h2>
 			{{#publications}}
@@ -330,7 +336,7 @@
 			{{/publications}}
 		</div>
 		{{/publicationsBool}} {{#interestsBool}}
-		<div id="interests">
+		<div id="interests nobreak">
 			<h2>
 				<i class="fa fa-star left"></i> INTERESTS</h2>
 			{{#interests}}
@@ -340,7 +346,7 @@
 			{{/keywords}} {{/interests}}
 		</div>
 		{{/interestsBool}} {{#languagesBool}}
-		<div id="languages">
+		<div id="languages nobreak">
 			<h2>
 				<i class="fa fa-language left"></i> LANGUAGES</h2>
 			{{#languages}}
@@ -349,7 +355,7 @@
 			{{/languages}}
 		</div>
 		{{/languagesBool}} {{#referencesBool}}
-		<div id="references">
+		<div id="references nobreak">
 			<h2>
 				<i class="fa fa-thumbs-up left"></i> REFERENCES</h2>
 			{{#references}}
