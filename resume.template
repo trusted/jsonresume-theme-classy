@@ -183,7 +183,7 @@
 			{{basics.location.city}}, {{basics.location.region}}, {{basics.location.countryCode}}
 			<br> {{basics.location.address}}
 		</div>
-		<div id="contact nobreak">
+		<div id="contact">
 			<br> {{#emailBool}}
 			<div class="contact-header">
 				EMAIL
@@ -198,7 +198,7 @@
 				</span>
 			</div>
 			{{/emailBool}} {{#phoneBool}}
-			<div class="contact-header nobreak">
+			<div class="contact-header">
 				PHONE
 				<span class="responsive-hidden">&bull;</span>
 				<span class="responsive-show">
@@ -226,7 +226,7 @@
 		</div>
 		{{#profilesBool}}
 		<br>
-		<div id="profiles nobreak">
+		<div id="profiles">
 			<div class="contact-header">PROFILES</div>
 			<br> {{#basics.profiles}}
 			<p class="profile">
@@ -238,7 +238,7 @@
 	</div>
 	<div class="main">
 		{{#aboutBool}}
-		<div id="about nobreak">
+		<div id="about" class="nobreak">
 			<h2>
 				<i class="fa fa-user left"></i> ABOUT</h2>
 			<p>
@@ -246,7 +246,7 @@
 			</p>
 		</div>
 		{{/aboutBool}} {{#workBool}}
-		<div id="work nobreak">
+		<div id="work" class="nobreak">
 			<h2>
 				<i class="fa fa-suitcase left"></i> WORK EXPERIENCE</h2>
 			{{#work}}
@@ -266,7 +266,7 @@
 			{{/work}}
 		</div>
 		{{/workBool}} {{#volunteerBool}}
-		<div id="volunteer nobreak">
+		<div id="volunteer" class="nobreak">
 			<h2>
 				<i class="fa fa-child left"></i> VOLUNTEER WORK</h2>
 			{{#volunteer}}
@@ -286,7 +286,7 @@
 			{{/volunterHighlights}} {{/volunteer}}
 		</div>
 		{{/volunteerBool}} {{#skillsBool}}
-		<div id="skills nobreak">
+		<div id="skills" class="nobreak">
 			<h2>
 				<i class="fa fa-tasks left"></i> Clinical Experience</h2>
 			{{#skills}}
@@ -296,7 +296,7 @@
 			{{/keywords}} {{/skills}}
 		</div>
 		<br> {{/skillsBool}} {{#educationBool}}
-		<div id="education nobreak">
+		<div id="education" class="nobreak">
 			<h2>
 				<i class="fa fa-graduation-cap left"></i> EDUCATION</h2>
 			{{#education}}
@@ -313,7 +313,7 @@
 			{{/educationCourses}} {{/education}}
 		</div>
 		{{/educationBool}} {{#awardsBool}}
-		<div id="awards nobreak">
+		<div id="awards" class="nobreak">
 			<h2>
 				<i class="fa fa-trophy left"></i> AWARDS</h2>
 			{{#awards}}
@@ -323,7 +323,7 @@
 			{{/awards}}
 		</div>
 		{{/awardsBool}} {{#publicationsBool}}
-		<div id="publications nobreak">
+		<div id="publications" class="nobreak">
 			<h2>
 				<i class="fa fa-book left"></i> PUBLICATIONS</h2>
 			{{#publications}}
@@ -336,7 +336,7 @@
 			{{/publications}}
 		</div>
 		{{/publicationsBool}} {{#interestsBool}}
-		<div id="interests nobreak">
+		<div id="interests" class="nobreak">
 			<h2>
 				<i class="fa fa-star left"></i> INTERESTS</h2>
 			{{#interests}}
@@ -346,7 +346,7 @@
 			{{/keywords}} {{/interests}}
 		</div>
 		{{/interestsBool}} {{#languagesBool}}
-		<div id="languages nobreak">
+		<div id="languages" class="nobreak">
 			<h2>
 				<i class="fa fa-language left"></i> LANGUAGES</h2>
 			{{#languages}}
@@ -355,7 +355,7 @@
 			{{/languages}}
 		</div>
 		{{/languagesBool}} {{#referencesBool}}
-		<div id="references nobreak">
+		<div id="references" class="nobreak">
 			<h2>
 				<i class="fa fa-thumbs-up left"></i> REFERENCES</h2>
 			{{#references}}
