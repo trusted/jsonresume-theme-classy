@@ -34,6 +34,7 @@ function render(resumeObject) {
 
   if (resumeObject.basics.profiles) {
     if (resumeObject.basics.profiles[0].network) {
+      resumeObject.profilesBool = true;
       _.each(resumeObject.basics.profiles, function(w) {
         if (
           (w.network == "Twitter" || w.network == "twitter") &&

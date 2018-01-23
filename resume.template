@@ -218,6 +218,7 @@
 			</div>
 			{{/websiteBool}}
 		</div>
+		{{#profilesBool}}
 		<br>
 		<div id="profiles">
 			<div class="contact-header">PROFILES</div>
@@ -227,6 +228,7 @@
 			</p>
 			{{/basics.profiles}}
 		</div>
+		{{/profilesBool}}
 	</div>
 	<div class="main">
 		{{#aboutBool}}
