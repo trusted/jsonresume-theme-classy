@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{basics.name}}</title>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans' rel='stylesheet' type='text/css'>
-	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<style>
 		body {
 			font-size: 62.5%;
@@ -19,6 +19,7 @@
 			float: none;
 			position: relative;
 			page-break-inside: avoid !important;
+			margin-top: 20px;
 		}
 
 		.picture {
@@ -49,7 +50,7 @@
 		}
 
 		h1 {
-			font-size: 3em;
+			font-size: 2em;
 			margin-bottom: 0;
 		}
 
@@ -69,7 +70,7 @@
 		}
 
 		.fa {
-			font-size: 2em;
+			font-size: 1em;
 		}
 
 		.left {
@@ -84,18 +85,18 @@
 		}
 
 		h2 {
-			font-size: 3.5em;
+			font-size: 2em;
 		}
 
 		h3 {
-			font-size: 2em;
+			font-size: 1.3em;
 			margin-bottom: 0;
 		}
 
 		h4 {
 			color: #4e4e4e;
-			font-size: 1.5em;
-			margin-top: 0;
+			font-size: 1.2em;
+			margin: 0;
 		}
 
 		.skills {
@@ -104,7 +105,8 @@
 
 		p {
 			font-family: 'Open Sans';
-			font-size: 1.5em;
+			font-size: 1em;
+			margin: 0;
 		}
 
 		li {
@@ -143,7 +145,7 @@
 				font-size: 1.66em;
 			}
 			h2 {
-				font-size: 3em;
+				font-size: 2.3em;
 			}
 		}
 
@@ -186,28 +188,29 @@
 		<div id="contact">
 			<br> {{#emailBool}}
 			<div class="contact-header">
-				EMAIL
-				<span class="responsive-hidden">&bull;</span>
-				<span class="responsive-show">
+				<!-- EMAIL
+				<span class="responsive-hidden">&bull;</span> -->
+				<!-- <span class="responsive-show">
 					<br>
-				</span>
+				</span> -->
 				<a href="mailto:{{basics.email}}" target="_blank">{{basics.email}}</a>
-				<span class="responsive-show">
+				<!-- <span class="responsive-show">
 					<br>
 					<br>
-				</span>
+				</span> -->
 			</div>
 			{{/emailBool}} {{#phoneBool}}
 			<div class="contact-header">
-				PHONE
-				<span class="responsive-hidden">&bull;</span>
-				<span class="responsive-show">
+				<!-- PHONE
+				<span class="responsive-hidden">&bull;</span> -->
+				<!-- <span class="responsive-show">
 					<br>
-				</span>{{basics.phone}}
-				<span class="responsive-show">
+				</span> -->
+				{{basics.phone}}
+				<!-- <span class="responsive-show">
 					<br>
 					<br>
-				</span>
+				</span> -->
 			</div>
 			{{/phoneBool}} {{#websiteBool}}
 			<div class="contact-header">
@@ -245,13 +248,47 @@
 				{{basics.summary}}
 			</p>
 		</div>
-		{{/aboutBool}} {{#workBool}}
+		{{/aboutBool}} {{#skillsBool}}
+		<div id="skills" class="nobreak">
+			<h2>
+				<i class="fa fa-tasks left"></i> Clinical Specialties</h2>
+			{{#skills}}
+			<h3 class="skills">{{name}}</h3>
+			{{#keywords}}
+			<!-- TODO: change keywords to just list instead of box -->
+			<span class="keywords">{{.}}</span>
+			{{/keywords}} {{/skills}}
+		</div>
+		<br> {{/skillsBool}} {{#licensesBool}}
+		<div id="licenses" class="nobreak">
+			<h2>
+				<i class="fa fa-id-card left"></i> LICENSES & CERTIFICATIONS</h2>
+
+			{{#licenses}}
+			<h3>{{title}}, {{state}}</h3>
+			<h4>Expires: {{expires}}</h4>
+			<h4>Number: {{number}}</h4>
+			{{#compact}}
+			<h4>Compact:
+				<i class="fa fa-check"></i>
+			</h4>
+			{{/compact}} {{/licenses}} {{#certifications}}
+			<h3>{{name}}</h3>
+			<h4>Issuing Body: {{issuing_body}}</h4>
+			<h4>Expires: {{expires}}</h4>
+
+
+			{{/certifications}}
+		</div>
+
+		{{/licensesBool}} {{#workBool}}
 		<div id="work" class="nobreak">
 			<h2>
 				<i class="fa fa-suitcase left"></i> WORK EXPERIENCE</h2>
 			{{#work}}
 			<div class="job">
 				<h3>{{position}}, {{company}}</h3>
+				<h4>{{location}}</h4>
 				<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}</h4>
 				<p>{{summary}}</p>
 				{{#workHighlights}}
@@ -265,7 +302,24 @@
 			</div>
 			{{/work}}
 		</div>
-		{{/workBool}} {{#volunteerBool}}
+		{{/workBool}} {{#educationBool}}
+		<div id="education" class="nobreak">
+			<h2>
+				<i class="fa fa-graduation-cap left"></i> EDUCATION</h2>
+			{{#education}}
+			<h3>{{studyType}}, {{institution}}</h3>
+			<h4>{{endDateMonth}}{{endDateYear}}{{#gpaBool}}
+				<br> GPA: {{gpa}}{{/gpaBool}}</h4>
+			{{#educationCourses}}
+			<h4>COURSES</h4>
+			<ul>
+				{{#courses}}
+				<li>{{.}}</li>
+				{{/courses}}
+			</ul>
+			{{/educationCourses}} {{/education}}
+		</div>
+		{{/educationBool}} {{#volunteerBool}}
 		<div id="volunteer" class="nobreak">
 			<h2>
 				<i class="fa fa-child left"></i> VOLUNTEER WORK</h2>
@@ -285,34 +339,7 @@
 			</ul>
 			{{/volunterHighlights}} {{/volunteer}}
 		</div>
-		{{/volunteerBool}} {{#skillsBool}}
-		<div id="skills" class="nobreak">
-			<h2>
-				<i class="fa fa-tasks left"></i> Clinical Experience</h2>
-			{{#skills}}
-			<h3 class="skills">{{name}}</h3>
-			{{#keywords}}
-			<span class="keywords">{{.}}</span>
-			{{/keywords}} {{/skills}}
-		</div>
-		<br> {{/skillsBool}} {{#educationBool}}
-		<div id="education" class="nobreak">
-			<h2>
-				<i class="fa fa-graduation-cap left"></i> EDUCATION</h2>
-			{{#education}}
-			<h3>{{studyType}}, {{area}} - {{institution}}</h3>
-			<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}{{#gpaBool}}
-				<br> GPA: {{gpa}}{{/gpaBool}}</h4>
-			{{#educationCourses}}
-			<h4>COURSES</h4>
-			<ul>
-				{{#courses}}
-				<li>{{.}}</li>
-				{{/courses}}
-			</ul>
-			{{/educationCourses}} {{/education}}
-		</div>
-		{{/educationBool}} {{#awardsBool}}
+		{{/volunteerBool}} {{#awardsBool}}
 		<div id="awards" class="nobreak">
 			<h2>
 				<i class="fa fa-trophy left"></i> AWARDS</h2>
@@ -350,23 +377,11 @@
 			<h2>
 				<i class="fa fa-language left"></i> LANGUAGES</h2>
 			{{#languages}}
-			<h3>{{language}}</h3>
-			<h4>Fluency: {{fluency}}</h4>
+			<h3>{{language}}{{#fluency}}, {{fluency}} {{/fluency}}
+			</h3>
 			{{/languages}}
 		</div>
-		{{/languagesBool}} {{#referencesBool}}
-		<div id="references" class="nobreak">
-			<h2>
-				<i class="fa fa-thumbs-up left"></i> REFERENCES</h2>
-			{{#references}}
-			<blockquote>
-				{{reference}}
-				<div class="name">
-					<br>- {{name}}</div>
-			</blockquote>
-			<br> {{/references}}
-		</div>
-		{{/referencesBool}}
+		{{/languagesBool}}
 
 	</div>
 </body>
