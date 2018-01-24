@@ -475,7 +475,7 @@ function render(resumeObject) {
   }
 
   if (resumeObject.skills) {
-    if (resumeObject.skills[0].name) {
+    if (resumeObject.skills[0] && resumeObject.skills[0].name) {
       resumeObject.skillsBool = true;
     }
   }
@@ -487,19 +487,22 @@ function render(resumeObject) {
   }
 
   if (resumeObject.licenses) {
-    if (resumeObject.licenses[0].title) {
+    if (resumeObject.licenses[0] && resumeObject.licenses[0].title) {
       resumeObject.licensesBool = true;
     }
   }
 
   if (!resumeObject.licensesBool && resumeObject.certifications) {
-    if (resumeObject.certifications[0].title) {
+    if (
+      resumeObject.certifications[0] &&
+      resumeObject.certifications[0].title
+    ) {
       resumeObject.licensesBool = true;
     }
   }
 
   if (resumeObject.languages) {
-    if (resumeObject.languages[0].language) {
+    if (resumeObject.languages[0] && resumeObject.languages[0].language) {
       resumeObject.languagesBool = true;
     }
   }
@@ -511,13 +514,16 @@ function render(resumeObject) {
   }
 
   if (resumeObject.technologies) {
-    if (resumeObject.technologies[0].technology) {
+    if (
+      resumeObject.technologies[0] &&
+      resumeObject.technologies[0].technology
+    ) {
       resumeObject.technologiesBool = true;
     }
   }
 
   if (resumeObject.researches) {
-    if (resumeObject.researches[0].org_name) {
+    if (resumeObject.researches[0] && resumeObject.researches[0].org_name) {
       resumeObject.researchesBool = true;
     }
   }
