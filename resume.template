@@ -51,7 +51,7 @@
 
 		h1 {
 			font-size: 2em;
-			margin-bottom: 0;
+			margin: 0;
 		}
 
 		.profile {
@@ -78,7 +78,7 @@
 		}
 
 		.main {
-			margin 0 auto;
+			margin: 0 auto;
 			margin-left: 10%;
 			margin-right: 10%;
 			margin-bottom: 50px;
@@ -89,14 +89,15 @@
 		}
 
 		h3 {
-			font-size: 1.3em;
+			font-size: 1.5em;
 			margin-bottom: 0;
 		}
 
 		h4 {
 			color: #4e4e4e;
-			font-size: 1.2em;
+			font-size: 1.3em;
 			margin: 0;
+			font-weight: normal;
 		}
 
 		.skills {
@@ -266,8 +267,8 @@
 
 			{{#licenses}}
 			<h3>{{title}}, {{state}}</h3>
-			<h4>Expires: {{expires}}</h4>
 			<h4>Number: {{number}}</h4>
+			<h4>Expires: {{expires}}</h4>
 			{{#compact}}
 			<h4>Compact:
 				<i class="fa fa-check"></i>
@@ -290,7 +291,13 @@
 				<h3>{{position}}, {{company}}</h3>
 				<h4>{{location}}</h4>
 				<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}</h4>
+				{{#unit}}
+				<h4>Unit: {{unit}}</h4>{{/unit}} {{#charge_exp}}
+				<h4>Charge:
+					<i class="fa fa-check"></i>
+				</h4>{{/charge_exp}}
 				<p>{{summary}}</p>
+
 				{{#workHighlights}}
 				<h4>HIGHLIGHTS</h4>
 				<ul>
@@ -300,6 +307,7 @@
 				</ul>
 				{{/workHighlights}}
 			</div>
+
 			{{/work}}
 		</div>
 		{{/workBool}} {{#educationBool}}
@@ -319,13 +327,28 @@
 			</ul>
 			{{/educationCourses}} {{/education}}
 		</div>
-		{{/educationBool}} {{#volunteerBool}}
+		{{/educationBool}} {{#researchesBool}}
+		<div id="research" class="nobreak">
+			<h2>
+				<i class="fa fa-flask left"></i> RESEARCH</h2>
+			{{#researches}}
+			<div class="research">
+				<h3>{{org_name}}</h3>
+				<h4>{{location}}</h4>
+				<h4>{{start_on}} - {{end_on}}</h4>
+				<p>{{summary}}</p>
+			</div>
+
+			{{/researches}}
+		</div>
+		{{/researchesBool}} {{#volunteerBool}}
 		<div id="volunteer" class="nobreak">
 			<h2>
 				<i class="fa fa-child left"></i> VOLUNTEER WORK</h2>
 			{{#volunteer}}
-			<h3>{{position}}, {{organization}}</h3>
+			<h3>{{organization}}</h3>
 			<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}</h4>
+			<br>
 			<p>{{summary}}
 				<br>
 				<a href="{{website}}" target="_blank">{{website}}</a>
@@ -338,6 +361,7 @@
 				{{/highlights}}
 			</ul>
 			{{/volunterHighlights}} {{/volunteer}}
+			<br>
 		</div>
 		{{/volunteerBool}} {{#awardsBool}}
 		<div id="awards" class="nobreak">
@@ -372,7 +396,16 @@
 			<span class="keywords">{{.}}</span>
 			{{/keywords}} {{/interests}}
 		</div>
-		{{/interestsBool}} {{#languagesBool}}
+		{{/interestsBool}} {{#technologiesBool}}
+		<div id="techonologies" class="nobreak">
+			<h2>
+				<i class="fa fa-wrench left"></i> TECHNOLOGIES</h2>
+			{{#technologies}}
+			<h3>{{technology}}{{#proficiency}}, {{proficiency}} {{/proficiency}}
+			</h3>
+			{{/technologies}}
+		</div>
+		{{/technologiesBool}} {{#languagesBool}}
 		<div id="languages" class="nobreak">
 			<h2>
 				<i class="fa fa-language left"></i> LANGUAGES</h2>

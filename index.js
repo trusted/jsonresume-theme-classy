@@ -510,6 +510,18 @@ function render(resumeObject) {
     }
   }
 
+  if (resumeObject.technologies) {
+    if (resumeObject.technologies[0].technology) {
+      resumeObject.technologiesBool = true;
+    }
+  }
+
+  if (resumeObject.researches) {
+    if (resumeObject.researches[0].org_name) {
+      resumeObject.researchesBool = true;
+    }
+  }
+
   var theme = fs.readFileSync(__dirname + "/resume.template", "utf8");
   var resumeHTML = Mustache.render(theme, resumeObject);
 
