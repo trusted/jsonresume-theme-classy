@@ -528,6 +528,10 @@ function render(resumeObject) {
     }
   }
 
+  if (resumeObject.background_questions) {
+    resumeObject.backgroundBool = true;
+  }
+
   var theme = fs.readFileSync(__dirname + "/resume.template", "utf8");
   var resumeHTML = Mustache.render(theme, resumeObject);
 

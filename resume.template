@@ -141,6 +141,14 @@
 			display: none;
 		}
 
+		.employment-gap {
+			margin: 10px
+		}
+
+		section.background-info {
+			margin-bottom: 10px;
+		}
+
 		@media (max-width: 1000px) {
 			.header {
 				font-size: 1.66em;
@@ -286,16 +294,22 @@
 		<div id="work" class="nobreak">
 			<h2>
 				<i class="fa fa-suitcase left"></i> WORK EXPERIENCE</h2>
-			{{#work}}
+			{{#work}} {{#gap_reason}}
+			<div class="employment-gap">
+				<p>{{gap_reason}} - {{gap_explanation}}</p>
+			</div>
+			{{/gap_reason}}
 			<div class="job">
 				<h3>{{position}}, {{company}}</h3>
 				<h4>{{location}}</h4>
 				<h4>{{startDateMonth}}{{startDateYear}} - {{endDateMonth}}{{endDateYear}}</h4>
 				{{#unit}}
-				<h4>Unit: {{unit}}</h4>{{/unit}} {{#charge_exp}}
-				<h4>Charge:
-					<i class="fa fa-check"></i>
-				</h4>{{/charge_exp}}
+				<h4>Unit: {{unit}}</h4>{{/unit}}
+				<h4>
+					Charge:
+					<i class="fa fa-check left"></i>
+				</h4>
+
 				<p>{{summary}}</p>
 
 				{{#workHighlights}}
@@ -306,6 +320,7 @@
 					{{/highlights}}
 				</ul>
 				{{/workHighlights}}
+
 			</div>
 
 			{{/work}}
@@ -414,8 +429,33 @@
 			</h3>
 			{{/languages}}
 		</div>
-		{{/languagesBool}}
+		{{/languagesBool}} {{#backgroundBool}}
+		<div id="background-questions" class="nobreak">
+			<section class="background-info">
+				<h2>Background Questions</h2>
+				<h4>Have you ever been convicted of a crime other than a minor traffic violation? - {{background_questions.crime_conviction}}</h4>
+				{{#background_questions.crime_conviction_explanation}}
+				<p>{{background_questions.crime_conviction_explanation}}</p>
+				{{/background_questions.crime_conviction_explanation}}
+			</section>
 
+			<section class="background-info">
+				<h4>Have you ever been named as a defendant in a professional liability action? - {{background_questions.liability_defendant}}</h4>
+				{{#background_questions.liability_defendant_explanation}}
+				<p>{{background_questions.liability_defendant_explanation}}</p>
+				{{/background_questions.liability_defendant_explanation}}
+			</section>
+
+			<section class="background-info">
+				<h4>Has action ever been taken against your professional license? - {{background_questions.license_action}}</h4>
+				{{#background_questions.license_action_explanation}}
+				<p>{{background_questions.license_action_explanation}}</p>
+				{{/background_questions.license_action_explanation}}
+			</section>
+
+		</div>
+
+		{{/backgroundBool}}
 	</div>
 </body>
 
