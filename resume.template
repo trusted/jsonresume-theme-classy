@@ -59,6 +59,10 @@
 			margin: 0;
 		}
 
+		.professional_titles {
+			font-size: .75em;
+		}
+
 		.label {
 			margin-top: 0;
 			margin-bottom: 1em;
@@ -193,7 +197,9 @@
 			</div>
 			{{/phoneBool}}
 		</div>
-		<h1>{{basics.capitalName}}</h1>
+		<h1>{{basics.capitalName}}{{#basics.professional_titles}},
+			<span class="professional_titles">{{basics.professional_titles}}{{/basics.professional_titles}}</span>
+		</h1>
 		<h3 class="label"></h3>
 		<div class="contact-header">
 			<b>{{basics.capitalLabel}}</b>, {{basics.location.city}}, {{basics.location.region}}
@@ -242,9 +248,13 @@
 			<h2>WORK EXPERIENCE</h2>
 			<div class="indent">
 				{{#work}} {{#gap_reason}}
-				<div class="employment-gap">
+				<div class="date">
+					<h4>Gap Explanation</h4>
+				</div>
+				<div class="info">
 					<h4>{{gap_reason}} - {{gap_explanation}}</h4>
 				</div>
+
 				{{/gap_reason}}
 				<div class="job">
 					<div class="date">
@@ -262,6 +272,7 @@
 						<p>{{summary}}</p>
 					</div>
 				</div>
+				</br>
 				{{/work}}
 			</div>
 		</div>
