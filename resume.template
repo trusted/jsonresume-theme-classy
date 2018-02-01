@@ -14,10 +14,11 @@
 		}
 
 		body {
-			font-size: 62.5%;
+			font-size: 8pt;
 			font-family: 'Avenir LT W01_45 Book1475508';
 			color: #13242A;
 			padding: 40px;
+			font-weight: normal;
 		}
 
 		.nobreak {
@@ -103,11 +104,12 @@
 
 		h2 {
 			font-size: 1.4em;
-			font-weight: bold;
+			font-weight: 500;
 			text-transform: uppercase;
 		}
 
 		h3 {
+			font-weight: 600;
 			font-size: 1.5em;
 			margin-bottom: 0;
 		}
@@ -155,7 +157,7 @@
 		}
 
 		blockquote .name {
-			font-weight: bold;
+			font-weight: normal;
 			font-family: 'Avenir LT W01_45 Book1475508';
 		}
 
