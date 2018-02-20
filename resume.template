@@ -270,10 +270,12 @@
 						<h4>{{location}}</h4>
 						{{#unit}}
 						<h4>Unit: {{unit}}</h4>{{/unit}}
+						{{#charge_exp}}
 						<h4>
 							Charge:
 							<i class="fa fa-check left"></i>
 						</h4>
+						{{/charge_exp}}
 						<p>{{summary}}</p>
 					</div>
 				</div>
