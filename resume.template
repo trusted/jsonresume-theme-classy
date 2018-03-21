@@ -207,7 +207,7 @@
 			<span class="professional_titles">{{basics.professional_titles}}{{/basics.professional_titles}}</span>
 		</h1>
 		<div class="contact-header">
-			<b>{{basics.capitalLabel}}</b>, {{basics.location.city}}, {{basics.location.region}}
+			<b>{{basics.capitalLabel}}</b>{{#basics.location}}, {{basics.location.city}}, {{basics.location.region}} {{/basics.location}}
 		</div>
 	</div>
 	<div class="main">
@@ -269,8 +269,7 @@
 						<h3>{{position}}, {{company}}</h3>
 						<h4>{{location}}</h4>
 						{{#unit}}
-						<h4>Unit: {{unit}}</h4>{{/unit}}
-						{{#charge_exp}}
+						<h4>Unit: {{unit}}</h4>{{/unit}} {{#charge_exp}}
 						<h4>
 							Charge:
 							<i class="fa fa-check left"></i>
