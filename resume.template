@@ -211,22 +211,6 @@
 		</div>
 	</div>
 	<div class="main">
-		<div id="skills" class="nobreak">
-			{{#skillsBool}}
-			<h2>Clinical Specialties</h2>
-			<div class="indent">
-				{{#skills}}
-				<h3 class="skills">{{name}}</h3>
-				{{#experience}}
-				<span class="keywords">{{experience}}</span>
-				{{/experience}} {{#patient_population}}
-				<span class="keywords">{{patient_population}}</span>
-				{{/patient_population}} {{/skills}}
-				<br/> {{/skillsBool}}
-			</div>
-		</div>
-
-
 		{{#licensesBool}}
 		<div id="licenses" class="nobreak">
 			<h2>LICENSES & CERTIFICATIONS</h2>
