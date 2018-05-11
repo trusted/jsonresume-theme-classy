@@ -14,24 +14,27 @@
 		}
 
 		body {
-			font-size: 8pt;
-			font-family: 'Avenir LT W01_45 Book1475508';
+			font-size: 62.5%;
+			font-family: 'Avenir LT W01_45 Book1475508', sans-serif;
 			color: #13242A;
-			padding: 40px;
-			font-weight: normal;
+			padding: 30px;
+			min-width: 700px;
 		}
 
 		.nobreak {
 			float: none;
 			position: relative;
 			page-break-inside: avoid !important;
-			margin-top: 30px;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			border-top: 1px solid #EDF0F1;
 		}
 
 		#contact {
 			float: right;
 			margin-top: 10px;
 			text-align: right;
+			line-height: 1.60;
 		}
 
 		.picture {
@@ -55,17 +58,13 @@
 
 		.header {
 			font-size: 1.4em;
-			margin-bottom: 40px;
+			margin-bottom: 30px;
 		}
 
 		.profile {
-			font-family: 'Avenir LT W01_45 Book1475508';
+			font-family: 'Avenir', 'Source Sans Pro', sans-serif;
 			font-size: 1em;
 			margin: 0;
-		}
-
-		.professional_titles {
-			font-size: .75em;
 		}
 
 		.label {
@@ -73,14 +72,39 @@
 			margin-bottom: 1em;
 		}
 
+		.entry {
+			line-height: 1.7;
+			margin-bottom: 10px;
+		}
+
+		.row {
+			margin-top: 0.5em;
+		}
+
 		.date {
 			display: table-cell;
 			font-size: 1em;
-			width: 150px;
+			width: 140px;
+			font-style: italic;
+			text-align: right;
+			padding-right: 30px;
 		}
 
 		.info {
 			display: table-cell;
+		}
+
+		.location {
+			display: table-cell;
+			text-align: right;
+			padding-left: 30px;
+			float: right;
+			color: #778C94;
+			font-size: 0.9em;
+		}
+
+		.tenure {
+			color: #778C94;
 		}
 
 		.fa {
@@ -98,26 +122,30 @@
 		}
 
 		h1 {
-			font-size: 2em;
-			margin: 0;
+			font-size: 1.8em;
+			margin: 0 0 1em 0;
 		}
 
 		h2 {
-			font-size: 1.4em;
-			font-weight: 500;
-			text-transform: uppercase;
+			font-size: 1.5em;
+			font-weight: bold;
+			margin: 0;
 		}
 
 		h3 {
-			font-weight: 600;
-			font-size: 1.5em;
-			margin-bottom: 0;
+			font-size: 1.3em;
+			margin: 0;
 		}
 
 		h4 {
 			font-size: 1.3em;
 			margin: 0;
 			font-weight: normal;
+		}
+
+		.name {
+			font-size: 1.8em;
+			font-weight: bold;
 		}
 
 		.skills {
@@ -128,14 +156,26 @@
 			margin-left: 20px;
 		}
 
+		.tile {
+			display: inline-block;
+			width: 49%;
+			margin-bottom: 1.5em;
+			line-height: 1.7;
+		}
+
+		.contact-header {
+			margin-top: 1em;
+			line-height: 1.5em;
+		}
+
 		p {
-			font-family: 'Avenir LT W01_45 Book1475508';
+			font-family: 'Avenir', 'Source Sans Pro', sans-serif;
 			margin: 0;
 		}
 
 		li {
-			font-family: 'Avenir LT W01_45 Book1475508';
-			font-size: 1.5em;
+			font-family: 'Avenir', 'Source Sans Pro', sans-serif;
+			font-size: 1.3em;
 		}
 
 		.keywords {
@@ -148,17 +188,34 @@
 			display: inline-block;
 		}
 
+		.pills {
+			margin-top: 8px;
+		}
+
+		.pill {
+			font-size: 1.3em;
+			border: 1px solid #D3DADC;
+			border-radius: 40px;
+			padding: 2px 8px;
+			margin: .25em;
+			display: inline-block;
+		}
+
+		ul {
+			margin-top: 5px;
+		}
+
 		blockquote {
 			margin: 2em 10px;
 			padding: 1em 10px;
 			border-left: 10px solid #edf0f5;
-			font-family: 'Avenir LT W01_45 Book1475508';
+			font-family: 'Avenir', 'Source Sans Pro', sans-serif;
 			font-size: 1.5em;
 		}
 
 		blockquote .name {
-			font-weight: normal;
-			font-family: 'Avenir LT W01_45 Book1475508';
+			font-weight: bold;
+			font-family: 'Avenir', 'Source Sans Pro', sans-serif;
 		}
 
 		.responsive-show {
@@ -166,12 +223,15 @@
 		}
 
 		.employment-gap {
-			margin-top: 10px;
-			margin-left: 150px;
+			margin: 5px 0;
 		}
 
 		section.background-info {
 			margin-bottom: 10px;
+		}
+
+		.pre-wrap {
+			white-space: pre-wrap;
 		}
 
 		@media (max-width: 1000px) {}
@@ -192,208 +252,227 @@
 
 <body>
 	<div class="header">
-		<div id="contact">
-			{{#emailBool}}
-			<div class="contact-header">
-				<a href="mailto:{{basics.email}}" target="_blank">{{basics.email}}</a>
-			</div>
-			{{/emailBool}} {{#phoneBool}}
-			<div class="contact-header">
-				{{basics.phone}}
-			</div>
-			{{/phoneBool}}
-		</div>
-		<h1>{{basics.capitalName}}{{#basics.professional_titles}},
-			<span class="professional_titles">{{basics.professional_titles}}{{/basics.professional_titles}}</span>
-		</h1>
+		<p class="name">{{basics.name}}{{#basics.professionalTitles}}, {{basics.professionalTitles}}{{/basics.professionalTitles}}</p>
 		<div class="contact-header">
-			<b>{{basics.capitalLabel}}</b>{{#basics.location}}, {{basics.location.city}}, {{basics.location.region}} {{/basics.location}}
+			{{basics.location}}
+			<br/> {{basics.phone}}
+			<br/> {{basics.email}}
 		</div>
 	</div>
-	<div class="main">
-		{{#licensesBool}}
-		<div id="licenses" class="nobreak">
-			<h2>LICENSES & CERTIFICATIONS</h2>
-			<div class="indent">
 
+	<div class="main">
+		<div id="summary" class="nobreak">
+			<h1>Summary</h1>
+			<h4 class="pre-wrap">{{basics.summary}}</h4>
+		</div>
+
+		<div id="licenses" class="nobreak">
+			<h1>Licenses</h1>
+			<div class="indent">
 				{{#licenses}}
-				<h3>{{title}}, {{state}}</h3>
-				<h4>Number: {{number}}</h4>
-				<h4>Expires: {{expires}}</h4>
-				{{#compact}}
-				<h4>Compact:
-					<i class="fa fa-check"></i>
-				</h4>
-				{{/compact}} {{/licenses}} {{#certifications}}
-				<h3>{{name}}</h3>
-				<h4>Issuing Body: {{issuing_body}}</h4>
-				<h4>Expires: {{expires}}</h4>
+				<div class="tile">
+					<h3>{{state}}{{#compact}} - Compact{{/compact}}</h3>
+					<h4>{{title}} - {{number}}</h4>
+					<h4>Expiration: {{expires}}</h4>
+				</div>
+				{{/licenses}}
+			</div>
+		</div>
+
+		<div id="certifications" class="nobreak">
+			<h1>Certifications</h1>
+			<div class="indent">
+				{{#certifications}}
+				<div class="tile">
+					<h3>{{name}}</h3>
+					<h4>{{issuingBody}}</h4>
+					<h4>Expiration: {{expires}}</h4>
+				</div>
 				{{/certifications}}
 			</div>
 		</div>
 
-		{{/licensesBool}} {{#workBool}}
 		<div id="work" class="nobreak">
-			<h2>WORK EXPERIENCE</h2>
-			<div class="indent">
-				{{#work}} {{#gap_reason}}
-				<div class="date">
-					<h4>Gap Explanation</h4>
+			<h1>Work Experience</h1>
+			{{#work}} {{#gapReason}}
+			<div class="entry">
+				<div class="row">
+					<div class="location">
+						<h4>{{gapLocation}}</h4>
+					</div>
+					<div class="date">
+						<h4>{{gapDates}}</h4>
+					</div>
+					<div class="info">
+						<h2>Employment Gap: {{gapReason}}</h2>
+					</div>
 				</div>
-				<div class="info">
-					<h4>{{gap_reason}} - {{gap_explanation}}</h4>
-				</div>
-
-				{{/gap_reason}}
-				<div class="job">
+			</div>
+			{{/gapReason}}
+			<div class="entry">
+				<div class="row">
+					<div class="location">
+						<h4>{{location}}</h4>
+					</div>
 					<div class="date">
 						<h4>{{startDate}} - {{endDate}}</h4>
 					</div>
 					<div class="info">
-						<h3>{{position}}, {{company}}</h3>
-						<h4>{{location}}</h4>
-						<h4>{{employment_type}}</h4>
-						{{#unit}}
-						<h4>Unit: {{unit}}</h4>{{/unit}} {{#charge_exp}}
-						<h4>
-							Charge:
-							<i class="fa fa-check left"></i>
-						</h4>
-						{{/charge_exp}}
-						<p>{{summary}}</p>
+						<h2>{{company}}</h2>
 					</div>
 				</div>
-				</br>
-				{{/work}}
+				{{#positions}}
+				<div class="row">
+					<div class="date">
+						<h4 class="tenure">{{duration}}</h4>
+					</div>
+					<div class="info">
+						<h3>{{unit}} - {{title}} {{#employmentType}}({{employmentType}}){{/employmentType}}</h3>
+						{{#specialties}}
+						<div class="pills indent">
+							<span class="pill">{{specialties}}</span>
+						</div>
+						{{/specialties}}
+						<ul>
+							{{#chargeExp}}
+							<li>Charge experience</li>
+							{{/chargeExp}} {{#descriptions}}
+							<li>{{.}}</li>
+							{{/descriptions}}
+						</ul>
+					</div>
+				</div>
+				{{/positions}}
 			</div>
+			{{/work}}
 		</div>
-		{{/workBool}} {{#educationBool}}
+
 		<div id="education" class="nobreak">
-			<h2>EDUCATION</h2>
-			<div class="indent">
-				{{#education}}
-				<div class="school">
-					<div class="date">
-						<h4>{{endDateMonth}}{{endDateYear}}</h4>
-					</div>
-					<div class="info">
-						<h3>{{studyType}}, {{institution}}</h3>
-						{{#gpaBool}}
-						<h4> GPA: {{gpa}}</h4>
-						{{/gpaBool}}
-					</div>
-				</div>
-				{{/education}}
-			</div>
-		</div>
-		{{/educationBool}} {{#researchesBool}}
-		<div id="research" class="nobreak">
-			<h2>RESEARCH</h2>
-			<div class="indent">
-				{{#researches}}
-				<div class="research">
-					<div class="date">
-						<h4>{{start_on}} - {{end_on}}</h4>
-					</div>
-					<div class="info">
-						<h3>{{org_name}}</h3>
+			<h1>Education</h1>
+			{{#education}}
+			<div class="entry">
+				<div class="row">
+					<div class="location">
 						<h4>{{location}}</h4>
-						<h4>{{summary}}</h4>
+					</div>
+					<div class="date">
+						<h4>{{startDate}} - {{endDate}}</h4>
+					</div>
+					<div class="info">
+						<h2>{{institution}}</h2>
 					</div>
 				</div>
-				{{/researches}}
+				<div class="row">
+					<div class="date"></div>
+					<div class="info">
+						<h3>{{studyType}}</h3>
+						<ul>
+							{{#descriptions}}
+							<li>{{.}}</li>
+							{{/descriptions}}
+						</ul>
+					</div>
+				</div>
 			</div>
+			{{/education}}
 		</div>
-		{{/researchesBool}} {{#volunteerBool}}
-		<div id="volunteer" class="nobreak">
-			<h2>VOLUNTEER WORK</h2>
+
+		<div id="technologies" class="nobreak">
+			<h1>Technologies</h1>
 			<div class="indent">
-				{{#volunteer}}
-				<div class="volunteer">
+				<div class="pills">
+					{{#technologies}}
+					<span class="pill">{{technology}}</span>
+					{{/technologies}}
+				</div>
+			</div>
+			<br/>
+		</div>
+
+		<div id="languages" class="nobreak">
+			<h1>Languages</h1>
+			<div class="indent">
+				<div class="pills">
+					{{#languages}}
+					<span class="pill">
+						{{language}}{{#fluency}} - {{fluency}}{{/fluency}}
+					</span>
+					{{/languages}}
+				</div>
+			</div>
+			<br/>
+		</div>
+
+		<div id="volunteer" class="nobreak">
+			<h1>Volunteer Experience</h1>
+			{{#volunteer}}
+			<div class="entry">
+				<div class="row">
+					<div class="location">
+						<h4>{{location}}</h4>
+					</div>
 					<div class="date">
 						<h4>{{startDate}} - {{endDate}}</h4>
 					</div>
 					<div class="info">
 						<h3>{{organization}}</h3>
-						<h4>{{summary}}</h4>
+						<ul>
+							{{#descriptions}}
+							<li>{{.}}</li>
+							{{/descriptions}}
+						</ul>
 					</div>
 				</div>
-				{{/volunteer}}
 			</div>
+			{{/volunteer}}
 		</div>
-		{{/volunteerBool}} {{#awardsBool}}
+
 		<div id="awards" class="nobreak">
-			<h2>AWARDS</h2>
-			<div class="indent">
-				{{#awards}}
-				<div class="award">
+			<h1>Awards &amp; Honors</h1>
+			{{#awards}}
+			<div class="entry">
+				<div class="row">
 					<div class="date">
-						<h4>{{month}} {{year}}</h4>
+						<h4>{{date}}</h4>
 					</div>
 					<div class="info">
-						<h3>{{title}} - {{awarder}}</h3>
-						<h4>{{summary}}</h4>
+						<h3>{{title}}</h3>
+						<h4>{{awarder}}</h4>
+						<ul>
+							{{#descriptions}}
+							<li>{{.}}</li>
+							{{/descriptions}}
+						</ul>
 					</div>
 				</div>
-				{{/awards}}
 			</div>
-		</div>
-		{{/awardsBool}}{{#technologiesBool}}
-		<div id="techonologies" class="nobreak">
-			<h2>TECHNOLOGIES</h2>
-			<div class="indent">
-				{{#technologies}}
-				<h3>{{technology}}{{#proficiency}}, {{proficiency}} {{/proficiency}}
-				</h3>
-				{{/technologies}}
-			</div>
-		</div>
-		{{/technologiesBool}} {{#languagesBool}}
-		<div id="languages" class="nobreak">
-			<h2>LANGUAGES</h2>
-			<div class="indent">
-				{{#languages}}
-				<h3>{{language}}{{#fluency}}, {{fluency}} {{/fluency}}
-				</h3>
-				{{/languages}}
-			</div>
-		</div>
-		{{/languagesBool}} {{#backgroundBool}}
-		<div id="background-questions" class="nobreak">
-			<h2>Background Questions</h2>
-			<div class="indent">
-				<section class="background-info">
-
-					<h4>
-						<i>Have you ever been convicted of a crime other than a minor traffic violation? - {{background_questions.crime_conviction}}</i>
-					</h4>
-					{{#background_questions.crime_conviction_explanation}}
-					<h4 class="indent">{{background_questions.crime_conviction_explanation}}</h4>
-					{{/background_questions.crime_conviction_explanation}}
-				</section>
-
-				<section class="background-info">
-					<h4>
-						<i>Have you ever been named as a defendant in a professional liability action? - {{background_questions.liability_defendant}}</i>
-					</h4>
-					{{#background_questions.liability_defendant_explanation}}
-					<h4 class="indent">{{background_questions.liability_defendant_explanation}}</h4>
-					{{/background_questions.liability_defendant_explanation}}
-				</section>
-
-				<section class="background-info">
-					<h4>
-						<i>Has action ever been taken against your professional license? - {{background_questions.license_action}}</i>
-					</h4>
-					{{#background_questions.license_action_explanation}}
-					<h4 class="indent">{{background_questions.license_action_explanation}}</h4>
-					{{/background_questions.license_action_explanation}}
-				</section>
-			</div>
-
+			{{/awards}}
 		</div>
 
-		{{/backgroundBool}}
+		<div id="research" class="nobreak">
+			<h1>Research &amp; Projects</h1>
+			{{#researches}}
+			<div class="entry">
+				<div class="row">
+					<div class="location">
+						<h4>{{location}}</h4>
+					</div>
+					<div class="date">
+						<h4>{{startOn}} - {{endOn}}</h4>
+					</div>
+					<div class="info">
+						<h3>{{orgName}}</h3>
+						<ul>
+							{{#descriptions}}
+							<li>{{.}}</li>
+							{{/descriptions}}
+						</ul>
+					</div>
+				</div>
+			</div>
+			{{/researches}}
+		</div>
+
 	</div>
 </body>
 
