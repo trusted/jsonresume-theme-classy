@@ -62,7 +62,6 @@
 		}
 
 		.profile {
-			font-family: 'Avenir', 'Source Sans Pro', sans-serif;
 			font-size: 1em;
 			margin: 0;
 		}
@@ -169,12 +168,10 @@
 		}
 
 		p {
-			font-family: 'Avenir', 'Source Sans Pro', sans-serif;
 			margin: 0;
 		}
 
 		li {
-			font-family: 'Avenir', 'Source Sans Pro', sans-serif;
 			font-size: 1.3em;
 		}
 
@@ -209,13 +206,11 @@
 			margin: 2em 10px;
 			padding: 1em 10px;
 			border-left: 10px solid #edf0f5;
-			font-family: 'Avenir', 'Source Sans Pro', sans-serif;
 			font-size: 1.5em;
 		}
 
 		blockquote .name {
 			font-weight: bold;
-			font-family: 'Avenir', 'Source Sans Pro', sans-serif;
 		}
 
 		.responsive-show {
@@ -261,12 +256,12 @@
 	</div>
 
 	<div class="main">
+		{{#basics.summary.length}}
 		<div id="summary" class="nobreak">
 			<h1>Summary</h1>
 			<h4 class="pre-wrap">{{basics.summary}}</h4>
 		</div>
-
-		{{#licenses.0}}
+		{{/basics.summary.length}} {{#licenses.0}}
 		<div id="licenses" class="nobreak">
 			<h1>Licenses</h1>
 			<div class="indent">
@@ -328,10 +323,10 @@
 						<h4 class="tenure">{{duration}}</h4>
 					</div>
 					<div class="info">
-						<h3>{{unit}} - {{title}} {{#employmentType}}({{employmentType}}){{/employmentType}}</h3>
+						<h3>{{#unit}}{{unit}} - {{/unit}}{{title}} {{#employmentType}}({{employmentType}}){{/employmentType}}</h3>
 						{{#specialties}}
 						<div class="pills indent">
-							<span class="pill">{{specialties}}</span>
+							<span class="pill">{{.}}</span>
 						</div>
 						{{/specialties}}
 						<ul>
@@ -357,7 +352,7 @@
 						<h4>{{location}}</h4>
 					</div>
 					<div class="date">
-						<h4>{{startDate}} - {{endDate}}</h4>
+						<h4>{{#startDate}}{{startDate}} - {{/startDate}}{{endDate}}</h4>
 					</div>
 					<div class="info">
 						<h2>{{institution}}</h2>
