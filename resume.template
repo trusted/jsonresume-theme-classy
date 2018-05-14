@@ -324,11 +324,11 @@
 					</div>
 					<div class="info">
 						<h3>{{#unit}}{{unit}} - {{/unit}}{{title}} {{#employmentType}}({{employmentType}}){{/employmentType}}</h3>
-						{{#specialties}}
 						<div class="pills indent">
+							{{#specialties}}
 							<span class="pill">{{.}}</span>
+							{{/specialties}}
 						</div>
-						{{/specialties}}
 						<ul>
 							{{#chargeExp}}
 							<li>Charge experience</li>
