@@ -468,7 +468,18 @@
 			</div>
 			{{/researches}}
 		</div>
-		{{/researches.0}}
+		{{/researches.0}} {{#backgroundQuestions.0}}
+		<div id="background">
+			<h1>Background Questions</h1>
+			{{#backgroundQuestions}}
+			<div class="nobreak" style="margin-top: 0.25rem;">
+					<h3>{{question}}</h3><br/>
+					<h4><b>Response:</b> {{answer}}</h4><br/>
+					<h4>{{#description}}<b>Explanation:</b> {{description}}{{/description}}</h4>
+			</div>
+			{{/backgroundQuestions}}
+		</div>
+		{{/backgroundQuestions.0}}
 	</div>
 </body>
 
