@@ -346,6 +346,21 @@
 		<div id="education">
 			<h1>Education</h1>
 			{{#education}}
+			{{#hasGap}}
+			<div class="entry nobreak">
+				<div class="row">
+					<div class="location">
+						<h4>{{gapLocation}}</h4>
+					</div>
+					<div class="date">
+						<h4>{{gapStartDate}} - {{gapEndDate}}</h4>
+					</div>
+					<div class="info">
+						<h2>Employment Gap: {{gapReason}}</h2>
+					</div>
+				</div>
+			</div>
+			{{/hasGap}}
 			<div class="entry nobreak">
 				<div class="row">
 					<div class="location">
