@@ -329,6 +329,11 @@
 							<span class="pill">{{.}}</span>
 							{{/specialties}}
 						</div>
+						<div class="pills indent">
+							{{#technologies}}
+							<span class="pill">{{.}}</span>
+							{{/technologies}}
+						</div>
 						<ul>
 							{{#chargeExp}}
 							<li>Charge experience</li>
