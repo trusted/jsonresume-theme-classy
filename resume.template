@@ -396,19 +396,7 @@
 			</div>
 			{{/education}}
 		</div>
-		{{/education.0}} {{#technologies.0}}
-		<div id="technologies" class="nobreak">
-			<h1>Technologies</h1>
-			<div class="indent">
-				<div class="pills">
-					{{#technologies}}
-					<span class="pill">{{technology}}</span>
-					{{/technologies}}
-				</div>
-			</div>
-			<br/>
-		</div>
-		{{/technologies.0}} {{#languages.0}}
+		{{/education.0}} {{#languages.0}}
 		<div id="languages" class="nobreak">
 			<h1>Languages</h1>
 			<div class="indent">
