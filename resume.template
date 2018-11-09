@@ -330,12 +330,14 @@
 							<span class="pill">{{.}}</span>
 							{{/specialties}}
 						</div>
+						{{#technologies.length}}
 						<div class="pills indent">
 							<i class="fas fa-tablet-alt"></i>
 							{{#technologies}}
 							<span class="pill">{{.}}</span>
 							{{/technologies}}
 						</div>
+						{{/technologies.length}}
 						<ul>
 							{{#chargeExp}}
 							<li>Charge experience</li>
