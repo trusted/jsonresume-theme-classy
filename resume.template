@@ -341,9 +341,13 @@
 						<ul>
 							{{#chargeExp}}
 							<li>Charge experience</li>
-							{{/chargeExp}} {{#descriptions}}
+							{{/chargeExp}} 
+							{{#descriptions}}
 							<li>{{.}}</li>
 							{{/descriptions}}
+							{{#agency}}
+							<li>Employed by {{agency}}</li>
+							{{/agency}}
 						</ul>
 					</div>
 				</div>
